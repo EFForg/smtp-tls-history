@@ -24,13 +24,13 @@ mapiRE = re.compile("with MAPI", re.IGNORECASE)
 spamRE = re.compile("with spam-scanned ", re.IGNORECASE)
 nnfmpRE = re.compile("with NNFMP[ ;]", re.IGNORECASE)
 
-# These things are, not sure if they're secure or not...
+# These things are mostly first-hop apps or protocols, we will need to classify them with more research
 weirdRE = re.compile("with (PIPE|ECSTREAM|M\+ Extreme|QMQP|Exchange Front|ME|Mail2World|MailEnable)", re.IGNORECASE)
 
 standaloneSpamScanRE = re.compile("with (NO UCE|with InterScan Message)", re.IGNORECASE)  # these go over LANs/WANs... unclear how safe they are
 
 comcastRE = re.compile("with comcast", re.IGNORECASE)
-
+# not sure if they're secure or not, so basically ignore them for now
 miscREs = [httpRE, spamRE, weirdRE, mapiRE, nnfmpRE, comcastRE, standaloneSpamScanRE]
 
 
